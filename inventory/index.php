@@ -50,7 +50,10 @@ class MySoapServer {
     }
 }
 
-$options = ['uri' => 'http://www.promostandards.org/WSDL/Inventory/2.0.0/'];
+$options = [
+    'uri' => 'http://www.promostandards.org/WSDL/Inventory/2.0.0/',
+    'soap_version' => SOAP_1_1
+];
 $server = new SoapServer('InventoryService.wsdl', $options);
 $server->setClass('MySoapServer');
 $server->handle();
